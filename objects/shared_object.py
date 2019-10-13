@@ -1,4 +1,3 @@
-
 class SharedObject(object):
     failCount = 0
     passCount = 0
@@ -24,4 +23,4 @@ class SharedObject(object):
 
     @staticmethod
     def fail_percent(self):
-       return (SharedObject.failCount / self.total)*100
+        return (SharedObject.failCount / self.total) * 100
