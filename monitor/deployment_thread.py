@@ -8,12 +8,12 @@ logger = logging.getLogger(__name__)
 
 
 class States(enum.Enum):
-    executing= "EXECUTING"
+    executing = "EXECUTING"
     provisioning = "PROVISIONING"
     installing = "INSTALLING"
     install_success = "INSTALLATION_SUCCEEDED"
     started = "STARTED"
-    provision_success= "PROVISIONING_SUCCEEDED"
+    provision_success = "PROVISIONING_SUCCEEDED"
     execution_failed = "INSTALLATION_FAILED"
 
 
@@ -34,7 +34,7 @@ class DeploymentThread(object):
             if status == States.execution_failed.value:
                 self._gtn_queue.put(gtn_id)
                 SharedObject.increment_fail_count()
-                (self._object_dict["gtn_id"]).re_trigger= True
+                (self._object_dict["gtn_id"]).re_trigger = True
                 logger.info("Current Failing Percentage is %s", str(self._get_total_failed()))
                 self._trigger_queue.put(gtn_id)
             else:
