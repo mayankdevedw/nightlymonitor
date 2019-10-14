@@ -11,7 +11,7 @@ class GTN(object):
         return self._gtn_id
 
 
-    @property.setter
+    @gtn_id.setter
     def gtn_id(self, value):
         self._gtn_id = value
 
@@ -19,7 +19,7 @@ class GTN(object):
     def tag(self):
         return self._tag
 
-    @property.setter
+    @tag.setter
     def tag(self, value):
         self._tag = value
 
@@ -28,6 +28,6 @@ class GTN(object):
         return self._re_trigger
 
 
-    @property.setter
+    @re_trigger.setter
     def re_trigger(self, value=True):
         self._re_trigger = value
